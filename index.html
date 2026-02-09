@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FarmFresh - Promoting Organic Farming for a Better Tomorrow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="FarmFresh supports organic farmers across India with education, resources, and market connections. Learn sustainable farming practices and join our community." />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background-color: #f7f5f0;
+      }
+
+      /* Navbar */
+      .navbar {
+        transition: all 0.3s ease;
+      }
+      .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2f8f2f !important;
+      }
+      .navbar-brand img {
+        height: 40px;
+      }
+      .nav-link {
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #2f8f2f !important;
+      }
+
+      /* Hero */
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://images.pexels.com/photos/1268101/pexels-photo-1268101.jpeg?auto=compress&cs=tinysrgb&w=1600")
+          center/cover no-repeat;
+        color: #fff;
+        position: relative;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+      }
+      .hero-overlay {
+        padding: 6rem 0 5rem;
+      }
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 1s ease;
+      }
+      .hero-subtitle {
+        font-size: 1.3rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 1.2s ease;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Icon row */
+      .feature-card {
+        background: #fff;
+        border-radius: 0.75rem;
+        padding: 1.5rem 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(47, 143, 47, 0.2);
+        border-color: #2f8f2f;
+      }
+      .feature-icon {
+        font-size: 2.5rem;
+      }
+
+      /* About section */
+      .section-title {
+        color: #2f5c2f;
+        font-weight: 700;
+        font-size: 2.5rem;
+      }
+      .check-list li::before {
+        content: "✓";
+        color: #2f8f2f;
+        font-weight: bold;
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+      }
+      .check-list li {
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        background: linear-gradient(135deg, #2f8f2f 0%, #2f5c2f 100%);
+        color: white;
+      }
+      .stat-card {
+        text-align: center;
+        padding: 2rem;
+      }
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      .stat-label {
+        font-size: 1.1rem;
+        opacity: 0.95;
+      }
+
+      /* Cards (Tips) */
+      .tips-card img {
+        height: 190px;
+        object-fit: cover;
+      }
+      .tip-card {
+        transition: all 0.3s ease;
+      }
+      .tip-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+      }
+
+      /* Testimonials */
+      .testimonial-card {
+        transition: all 0.3s ease;
+      }
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+      }
+      .testimonial-card img {
+        height: 170px;
+        object-fit: cover;
+      }
+      .star {
+        color: #f5b301;
+        font-size: 1.2rem;
+      }
+
+      /* Why Choose Us */
+      .why-card {
+        text-align: center;
+        padding: 2rem;
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+      .why-card:hover {
+        background: #f8f9fa;
+        transform: scale(1.05);
+      }
+      .why-icon {
+        font-size: 3rem;
+        color: #2f8f2f;
+        margin-bottom: 1rem;
+      }
+      .why-card img {
+        height: 180px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .gallery-img {
+        height: 250px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+      .gallery-img:hover {
+        transform: scale(1.05);
+      }
+
+      /* FAQ */
+      .accordion-button {
+        font-weight: 600;
+      }
+      .accordion-button:not(.collapsed) {
+        background-color: #e8f5e9;
+        color: #2f5c2f;
+      }
+
+      /* Newsletter */
+      .newsletter-section {
+        background: linear-gradient(135deg, #2f5c2f 0%, #2f8f2f 100%);
+        color: white;
+      }
+
+      footer {
+        background: #1a3a1a;
+        color: #dfe6dd;
+      }
+      .footer-link {
+        color: #dfe6dd;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .footer-link:hover {
+        color: #fff;
+      }
+      .social-icon {
+        font-size: 1.5rem;
+        color: #dfe6dd;
+        margin: 0 0.5rem;
+        transition: color 0.3s ease;
+      }
+      .social-icon:hover {
+        color: #2f8f2f;
+      }
+
+      @media (max-width: 767.98px) {
+        .hero-overlay {
+          padding: 4rem 0 3rem;
+        }
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        .section-title {
+          font-size: 2rem;
+        }
+        .stat-number {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <i class="fas fa-seedling me-2"></i>
+          <span>FarmFresh</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tips">Tips &amp; Guides</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#stories">Success Stories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <a href="#join" class="btn btn-success ms-lg-3 px-4">
+            <i class="fas fa-user-plus me-2"></i>Join Us
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay w-100">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h1 class="hero-title mb-4">
+                Welcome to <span class="text-warning">FarmFresh</span>
+              </h1>
+              <p class="hero-subtitle mb-4">
+                Empowering Organic Farmers Across India with Knowledge, Resources, and Sustainable Practices for a Healthier Tomorrow
+              </p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="#about" class="btn btn-success btn-lg px-5 py-3">
+                  <i class="fas fa-info-circle me-2"></i>Learn More
+                </a>
+                <a href="#tips" class="btn btn-outline-light btn-lg px-5 py-3">
+                  <i class="fas fa-book me-2"></i>Explore Tips
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3 col-6">
+            <div class="stat-card">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Active Farmers</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-card">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Training Programs</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-card">
+              <span class="stat-number">1000+</span>
+              <span class="stat-label">Acres Under Organic</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-card">
+              <span class="stat-number">95%</span>
+              <span class="stat-label">Success Rate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Icon Row -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center section-title mb-4">What We Offer</h2>
+        <div class="row g-4">
+          <div class="col-md-3 col-6">
+            <div class="feature-card">
+              <div class="feature-icon">🌱</div>
+              <div>
+                <div class="fw-bold fs-5">Organic Farming</div>
+                <small class="text-muted">Education & Training</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="feature-card">
+              <div class="feature-icon">📘</div>
+              <div>
+                <div class="fw-bold fs-5">Tips &amp; Guides</div>
+                <small class="text-muted">Expert Resources</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="feature-card">
+              <div class="feature-icon">🧺</div>
+              <div>
+                <div class="fw-bold fs-5">Fresh Produce</div>
+                <small class="text-muted">Market Access</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="feature-card">
+              <div class="feature-icon">🤝</div>
+              <div>
+                <div class="fw-bold fs-5">Community</div>
+                <small class="text-muted">Support Network</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About FarmFresh -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <h2 class="section-title mb-4">About FarmFresh</h2>
+            <p class="lead mb-4">
+              Supporting Organic Farmers Across India by connecting them with
+              knowledge, resources, and fair markets. We believe in sustainable agriculture that benefits both farmers and consumers.
+            </p>
+            <p class="mb-4">
+              Founded in 2020, FarmFresh has been at the forefront of promoting organic farming practices across rural and urban India. Our mission is to create a sustainable ecosystem where farmers thrive, consumers get healthy produce, and the environment benefits.
+            </p>
+            <ul class="list-unstyled check-list mb-4">
+              <li class="mb-3">
+                Promote sustainable farming practices for healthier produce and better yields.
+              </li>
+              <li class="mb-3">
+                Provide comprehensive resources and education to farmers in rural and urban areas.
+              </li>
+              <li class="mb-3">
+                Connect consumers directly with organic farms and local markets.
+              </li>
+              <li class="mb-3">
+                Support farmers with market access, fair pricing, and community networks.
+              </li>
+            </ul>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#tips" class="btn btn-success px-4 py-2">
+                <i class="fas fa-arrow-right me-2"></i>Explore Tips
+              </a>
+              <a href="#contact" class="btn btn-outline-success px-4 py-2">
+                <i class="fas fa-envelope me-2"></i>Contact Us
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="about.webp"
+              class="img-fluid rounded shadow-lg"
+              alt="Farmers with fresh produce"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center section-title mb-5">Why Choose FarmFresh?</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="why-card">
+              <img src="https://images.pexels.com/photos/2255801/pexels-photo-2255801.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                   alt="Expert Training" 
+                   class="w-100" />
+              <div class="why-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h4 class="mb-3">Expert Training</h4>
+              <p>
+                Learn from agricultural experts with years of experience in organic farming, soil management, and sustainable practices.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="why-card">
+              <img src="https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                   alt="Market Access" 
+                   class="w-100" />
+              <div class="why-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h4 class="mb-3">Market Access</h4>
+              <p>
+                Connect directly with buyers, retailers, and consumers looking for organic produce. Fair pricing guaranteed.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="why-card">
+              <img src="https://images.pexels.com/photos/1198504/pexels-photo-1198504.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                   alt="Community Support" 
+                   class="w-100" />
+              <div class="why-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h4 class="mb-3">Community Support</h4>
+              <p>
+                Join a network of like-minded farmers sharing knowledge, experiences, and supporting each other's growth.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="why-card">
+              <img src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                   alt="Organic Farming" 
+                   class="w-100" />
+              <div class="why-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <h4 class="mb-3">100% Organic</h4>
+              <p>
+                Certified organic practices ensuring chemical-free produce that's healthy for you and the environment.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="why-card">
+              <img src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                   alt="Increased Yields" 
+                   class="w-100" />
+              <div class="why-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4 class="mb-3">Increased Yields</h4>
+              <p>
+                Our methods help farmers achieve 20-30% better yields while reducing input costs and environmental impact.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="why-card">
+              <img src="ChatGPT Image Feb 8, 2026, 03_42_00 PM.png" 
+                   alt="Tech Support" 
+                   class="w-100" />
+              <div class="why-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h4 class="mb-3">Tech Support</h4>
+              <p>
+                Access to mobile apps, AI-driven insights, and modern farming tools to optimize your operations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Farming Tips & Guides (2025-2026) -->
+    <section id="tips" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title mb-3">
+            🌾 Top Farming Tips &amp; Guides (2025–2026)
+          </h2>
+          <p class="lead text-muted">
+            Expert advice for sustainable and profitable farming practices
+          </p>
+        </div>
+
+        <!-- Tip 1: Sustainable Soil & Crop Management -->
+        <div class="card shadow-sm mb-4 border-0 tip-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span class="display-6 me-3">🌱</span>
+              <h3 class="card-title mb-0 text-success">1. Sustainable Soil &amp; Crop Management</h3>
+            </div>
+            
+            <div class="row g-4 mt-2">
+              <div class="col-md-4">
+                <div class="h-100 p-4 bg-light rounded border-start border-success border-4">
+                  <h5 class="fw-bold mb-3 text-success">
+                    <i class="fas fa-sync-alt me-2"></i>Crop Rotation &amp; Diversity
+                  </h5>
+                  <p class="mb-0">
+                    Rotating crops like legumes, cereals, and vegetables improves soil nutrients, breaks pest cycles, and boosts yields by up to 25%.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="h-100 p-4 bg-light rounded border-start border-success border-4">
+                  <h5 class="fw-bold mb-3 text-success">
+                    <i class="fas fa-seedling me-2"></i>Cover Crops &amp; Organic Amendments
+                  </h5>
+                  <p class="mb-0">
+                    Use cover crops (e.g., clover, mustard) and compost to protect soil, enhance organic matter by 30%, and reduce erosion.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="h-100 p-4 bg-light rounded border-start border-success border-4">
+                  <h5 class="fw-bold mb-3 text-success">
+                    <i class="fas fa-recycle me-2"></i>Biofertilizers &amp; Green Manure
+                  </h5>
+                  <p class="mb-0">
+                    Natural fertilizers help nutrient uptake, improve soil structure, and support long-term fertility without harmful chemicals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tip 2: Water & Resource Efficiency -->
+        <div class="card shadow-sm mb-4 border-0 tip-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span class="display-6 me-3">💧</span>
+              <h3 class="card-title mb-0 text-success">2. Water &amp; Resource Efficiency</h3>
+            </div>
+            
+            <div class="row g-4 mt-2">
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded border-start border-primary border-4">
+                  <h5 class="fw-bold mb-3 text-primary">
+                    <i class="fas fa-tint me-2"></i>Smart Irrigation
+                  </h5>
+                  <p class="mb-0">
+                    Drip irrigation, rainwater harvesting, and moisture sensors help conserve water by 40-60% and supply it precisely where and when crops need it.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded border-start border-primary border-4">
+                  <h5 class="fw-bold mb-3 text-primary">
+                    <i class="fas fa-cloud-sun me-2"></i>Water-Smart Practices for Dry Areas
+                  </h5>
+                  <p class="mb-0">
+                    Dry farming techniques retain soil moisture and work excellently in regions where rainfall is low or unpredictable.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tip 3: Smart & Precision Agriculture -->
+        <div class="card shadow-sm mb-4 border-0 tip-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span class="display-6 me-3">🚜</span>
+              <h3 class="card-title mb-0 text-success">3. Smart &amp; Precision Agriculture</h3>
+            </div>
+            
+            <div class="row g-4 mt-2">
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded border-start border-info border-4">
+                  <h5 class="fw-bold mb-3 text-info">
+                    <i class="fas fa-satellite me-2"></i>Precision Tools
+                  </h5>
+                  <p class="mb-0">
+                    Use drones, GPS mapping, satellites, IoT soil sensors, and data analytics to monitor crop health, soil moisture, and pest threats in real time.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded border-start border-info border-4">
+                  <h5 class="fw-bold mb-3 text-info">
+                    <i class="fas fa-robot me-2"></i>AI-Driven Advisory &amp; Crop Monitoring
+                  </h5>
+                  <p class="mb-0">
+                    Apps and AI tools can suggest optimal times to irrigate, fertilise, or harvest, improving efficiency by 30% and cutting costs significantly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tip 4: Eco-Friendly Pest & Weed Control -->
+        <div class="card shadow-sm mb-4 border-0 tip-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span class="display-6 me-3">🐞</span>
+              <h3 class="card-title mb-0 text-success">4. Eco-Friendly Pest &amp; Weed Control</h3>
+            </div>
+            
+            <div class="row g-4 mt-2">
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded border-start border-warning border-4">
+                  <h5 class="fw-bold mb-3 text-warning">
+                    <i class="fas fa-shield-alt me-2"></i>Integrated Pest Management (IPM)
+                  </h5>
+                  <p class="mb-0">
+                    Combines crop diversity, natural predators, and minimal chemicals to control pests sustainably while protecting beneficial insects.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded border-start border-warning border-4">
+                  <h5 class="fw-bold mb-3 text-warning">
+                    <i class="fas fa-spray-can me-2"></i>Biopesticides &amp; Natural Pest Barriers
+                  </h5>
+                  <p class="mb-0">
+                    Neem oil, beneficial insects, and trap crops reduce reliance on synthetic pesticides by 70-80% while maintaining crop health.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tip 5: Regenerative & Organic Practices -->
+        <div class="card shadow-sm mb-4 border-0 tip-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span class="display-6 me-3">🌾</span>
+              <h3 class="card-title mb-0 text-success">5. Regenerative &amp; Organic Practices</h3>
+            </div>
+            
+            <div class="row g-4 mt-2">
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded border-start border-success border-4">
+                  <h5 class="fw-bold mb-3 text-success">
+                    <i class="fas fa-tractor me-2"></i>No-Till &amp; Reduced Tillage
+                  </h5>
+                  <p class="mb-0">
+                    Helps preserve soil structure, lowers erosion by 50%, and increases carbon sequestration in soil, combating climate change.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded border-start border-success border-4">
+                  <h5 class="fw-bold mb-3 text-success">
+                    <i class="fas fa-tree me-2"></i>Agroforestry
+                  </h5>
+                  <p class="mb-0">
+                    Integrating trees with crops improves biodiversity, soil health, and provides extra income sources like fruits, nuts, or timber.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tip 6: Tech Tips & Innovation -->
+        <div class="card shadow-sm mb-4 border-0 tip-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span class="display-6 me-3">💡</span>
+              <h3 class="card-title mb-0 text-success">6. Tech Tips &amp; Innovation</h3>
+            </div>
+            
+            <div class="row g-4 mt-2">
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded border-start border-danger border-4">
+                  <h5 class="fw-bold mb-3 text-danger">
+                    <i class="fas fa-satellite-dish me-2"></i>Remote Sensing &amp; Satellite Imagery
+                  </h5>
+                  <p class="mb-0">
+                    Spot hidden crop stress early and make targeted decisions about inputs, reducing waste and improving yields by 15-20%.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded border-start border-danger border-4">
+                  <h5 class="fw-bold mb-3 text-danger">
+                    <i class="fas fa-link me-2"></i>Blockchain Traceability
+                  </h5>
+                  <p class="mb-0">
+                    Helps farmers track produce from seed to sale, which builds consumer trust and can improve market access and premium pricing.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tip 7: Practical Everyday Farming Tips -->
+        <div class="card shadow-sm mb-4 border-0 tip-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span class="display-6 me-3">🧑‍🌾</span>
+              <h3 class="card-title mb-0 text-success">7. Practical Everyday Farming Tips</h3>
+            </div>
+            
+            <div class="row g-4 mt-2">
+              <div class="col-md-4">
+                <div class="h-100 p-4 bg-light rounded border-start border-secondary border-4">
+                  <h5 class="fw-bold mb-3 text-secondary">
+                    <i class="fas fa-flask me-2"></i>Soil Testing
+                  </h5>
+                  <p class="mb-0">
+                    Regularly test pH and nutrient levels to tailor fertiliser use, avoid over-application, and save 20-30% on input costs.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="h-100 p-4 bg-light rounded border-start border-secondary border-4">
+                  <h5 class="fw-bold mb-3 text-secondary">
+                    <i class="fas fa-cogs me-2"></i>Mechanisation
+                  </h5>
+                  <p class="mb-0">
+                    Using seed drills, power tillers, harvesters, and other affordable machines speeds up work by 60% and cuts labour costs.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="h-100 p-4 bg-light rounded border-start border-secondary border-4">
+                  <h5 class="fw-bold mb-3 text-secondary">
+                    <i class="fas fa-layer-group me-2"></i>Diversify Crops
+                  </h5>
+                  <p class="mb-0">
+                    Growing a variety of crops spreads risk, improves income stability, and ensures food security throughout the year.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories & Testimonials -->
+    <section id="stories" class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center section-title mb-3">
+          Success Stories &amp; Testimonials
+        </h2>
+        <p class="text-center lead text-muted mb-5">
+          Hear from farmers who transformed their fields and lives with FarmFresh
+        </p>
+
+        <div class="row g-4">
+          <!-- Story 1 -->
+          <div class="col-md-4">
+            <div class="card testimonial-card h-100 border-0 shadow-sm">
+              <img
+                src="https://images.pexels.com/photos/2255801/pexels-photo-2255801.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                class="card-img-top"
+                alt="Rajesh testimonial"
+              />
+              <div class="card-body">
+                <p class="mb-3">
+                  <i class="fas fa-quote-left text-success me-2"></i>
+                  FarmFresh has been a blessing for our farm. The support and
+                  resources provided have greatly improved our yield by 35% and
+                  sustainability. Our income has doubled!
+                  <i class="fas fa-quote-right text-success ms-2"></i>
+                </p>
+                <p class="mb-1 fw-bold">Rajesh Kumar</p>
+                <p class="text-muted small mb-2">Organic Farmer, Punjab</p>
+                <div>
+                  <span class="star">★ ★ ★ ★ ★</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 2 -->
+          <div class="col-md-4">
+            <div class="card testimonial-card h-100 border-0 shadow-sm">
+              <img
+                src="https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                class="card-img-top"
+                alt="Sunita testimonial"
+              />
+              <div class="card-body">
+                <p class="mb-3">
+                  <i class="fas fa-quote-left text-success me-2"></i>
+                  With FarmFresh guidance, we now grow fully organic vegetables
+                  and sell directly to nearby markets. The training programs were excellent!
+                  <i class="fas fa-quote-right text-success ms-2"></i>
+                </p>
+                <p class="mb-1 fw-bold">Sunita Patel</p>
+                <p class="text-muted small mb-2">Vegetable Grower, Gujarat</p>
+                <div>
+                  <span class="star">★ ★ ★ ★ ★</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 3 -->
+          <div class="col-md-4">
+            <div class="card testimonial-card h-100 border-0 shadow-sm">
+              <img
+                src="https://images.pexels.com/photos/1198504/pexels-photo-1198504.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                class="card-img-top"
+                alt="Family testimonial"
+              />
+              <div class="card-body">
+                <p class="mb-3">
+                  <i class="fas fa-quote-left text-success me-2"></i>
+                  Thanks to FarmFresh, we now practice organic farming
+                  effectively and have a steady market for our produce. The community support is amazing!
+                  <i class="fas fa-quote-right text-success ms-2"></i>
+                </p>
+                <p class="mb-1 fw-bold">Sunita Devi</p>
+                <p class="text-muted small mb-2">Rice Farmer, Odisha</p>
+                <div>
+                  <span class="star">★ ★ ★ ★ ★</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="text-white mb-3">
+              <i class="fas fa-envelope-open-text me-2"></i>Stay Updated
+            </h2>
+            <p class="text-white-50 mb-4">
+              Subscribe to our newsletter for the latest farming tips, market updates, and success stories
+            </p>
+            <form class="d-flex flex-column flex-md-row gap-2 justify-content-center">
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                placeholder="Enter your email address"
+                style="max-width: 400px;"
+              />
+              <button type="submit" class="btn btn-light btn-lg px-4">
+                <i class="fas fa-paper-plane me-2"></i>Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join & Contact -->
+    <section id="join" class="py-5 bg-white">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-md-6">
+            <h3 class="section-title mb-4">Join the FarmFresh Community</h3>
+            <p class="lead mb-4">
+              Become part of a growing network of organic farmers, experts, and
+              consumers committed to healthy food and a greener planet.
+            </p>
+            <ul class="list-unstyled check-list mb-4">
+              <li class="mb-3">
+                <strong>Access training sessions</strong> and detailed guides from agricultural experts.
+              </li>
+              <li class="mb-3">
+                <strong>Connect with buyers</strong> looking for organic produce and get fair prices.
+              </li>
+              <li class="mb-3">
+                <strong>Share your success story</strong> with other farmers and inspire the community.
+              </li>
+              <li class="mb-3">
+                <strong>Get technical support</strong> for farming challenges and market access.
+              </li>
+            </ul>
+            <a href="#contact" class="btn btn-success btn-lg px-5">
+              <i class="fas fa-user-plus me-2"></i>Join Now
+            </a>
+          </div>
+          <div class="col-md-6" id="contact">
+            <div class="card border-0 shadow-lg">
+              <div class="card-body p-4">
+                <h4 class="card-title mb-4">
+                  <i class="fas fa-comments text-success me-2"></i>Contact Us
+                </h4>
+                <form>
+                  <div class="mb-3">
+                    <label class="form-label fw-semibold">Full Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your name" required />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label fw-semibold">Email Address</label>
+                    <input type="email" class="form-control" placeholder="your.email@example.com" required />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label fw-semibold">Phone Number</label>
+                    <input type="tel" class="form-control" placeholder="+91 1234567890" />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label fw-semibold">Message</label>
+                    <textarea
+                      class="form-control"
+                      rows="4"
+                      placeholder="Tell us about your farm, questions, or how we can help..."
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-success w-100">
+                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title mb-2">Our Farming Community Gallery</h2>
+          <p class="lead text-muted">
+            Capturing moments from organic farms across India
+          </p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <img src="https://images.pexels.com/photos/2255801/pexels-photo-2255801.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                 alt="Farmer harvesting" 
+                 class="gallery-img w-100 shadow-sm" />
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <img src="https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                 alt="Fresh vegetables" 
+                 class="gallery-img w-100 shadow-sm" />
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <img src="https://images.pexels.com/photos/1198504/pexels-photo-1198504.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                 alt="Organic produce" 
+                 class="gallery-img w-100 shadow-sm" />
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <img src="ChatGPT Image Feb 8, 2026, 03_42_00 PM.png" 
+                 alt="Farmers working together" 
+                 class="gallery-img w-100 shadow-sm" />
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <img src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                 alt="Green fields" 
+                 class="gallery-img w-100 shadow-sm" />
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <img src="https://images.pexels.com/photos/1268101/pexels-photo-1268101.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                 alt="Farm landscape" 
+                 class="gallery-img w-100 shadow-sm" />
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <img src="https://images.pexels.com/photos/1300975/pexels-photo-1300975.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                 alt="Irrigation" 
+                 class="gallery-img w-100 shadow-sm" />
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <img src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+                 alt="Farm equipment" 
+                 class="gallery-img w-100 shadow-sm" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h5 class="text-white mb-3">
+              <i class="fas fa-seedling me-2"></i>FarmFresh
+            </h5>
+            <p class="text-white-50">
+              Empowering organic farmers across India with knowledge, resources, and sustainable practices for a healthier tomorrow.
+            </p>
+            <div class="mt-3">
+              <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <h6 class="text-white mb-3">Quick Links</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="footer-link">Home</a></li>
+              <li><a href="#about" class="footer-link">About Us</a></li>
+              <li><a href="#tips" class="footer-link">Tips &amp; Guides</a></li>
+              <li><a href="#stories" class="footer-link">Success Stories</a></li>
+              <li><a href="#contact" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-white mb-3">Resources</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="footer-link">Training Programs</a></li>
+              <li><a href="#" class="footer-link">Market Access</a></li>
+              <li><a href="#" class="footer-link">Farming Guides</a></li>
+              <li><a href="#" class="footer-link">Community Forum</a></li>
+              <li><a href="#" class="footer-link">Download App</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-white mb-3">Contact Info</h6>
+            <ul class="list-unstyled text-white-50">
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i>
+                123 Farm Road, New Delhi, India
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone me-2"></i>
+                +91 1800-123-4567
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i>
+                info@farmfresh.in
+              </li>
+              <li>
+                <i class="fas fa-clock me-2"></i>
+                Mon-Sat: 9AM - 6PM
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4 bg-white-50" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="text-white-50 mb-0">
+              &copy; <span id="year"></span> FarmFresh. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="footer-link me-3">Privacy Policy</a>
+            <a href="#" class="footer-link me-3">Terms of Service</a>
+            <a href="#" class="footer-link">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script>
+      // Set current year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Add animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.card, .why-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+      });
+    </script>
+  </body>
+</html>
